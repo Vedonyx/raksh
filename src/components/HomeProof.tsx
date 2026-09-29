@@ -12,7 +12,7 @@ export default function HomeProof() {
             <p className="proof-showcase__eyebrow"><span /> THE PERFORMANCE FILE / 2024—25</p>
             <h2 id="home-proof-title">The audience<br /><em>is in the details.</em></h2>
           </div>
-          <p>These are real captures from Raksh&apos;s YouTube Studio and Instagram insights. Open any frame to see the numbers at full size.</p>
+          <p>These are real captures from Rakshit&apos;s YouTube Studio and Instagram insights. Open any frame to see the numbers at full size.</p>
         </header>
 
         <div className="proof-showcase__chapter"><span>01 / YOUTUBE</span><span>FROM THE SUPPLIED STUDIO RECORDINGS</span></div>

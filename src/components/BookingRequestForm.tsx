@@ -33,9 +33,9 @@ export default function BookingRequestForm({ initialModule = "" }: Props) {
   const [minDate] = useState(() => indiaNow().date);
   const [message, setMessage] = useState("");
 
-  const subject = `Raksh Jain Module ${module || "consultation"} — slot request`;
+  const subject = `Rakshit Jain Module ${module || "consultation"} — slot request`;
   const details = [
-    "Hi Raksh,",
+    "Hi Rakshit,",
     "",
     `Name: ${name.trim()}`,
     `Email: ${email.trim()}`,
@@ -85,7 +85,7 @@ export default function BookingRequestForm({ initialModule = "" }: Props) {
     </div>
     <label>What would you like help with? <span>(optional)</span><textarea name="goal" rows={3} value={goal} onChange={(event) => setGoal(event.target.value)} placeholder="A little context helps us prepare." /></label>
     <div className="slot-form__footer"><button type="submit" className="pill-button">Prepare slot request <span>↗</span></button><button type="button" className="slot-form__copy" onClick={copyDetails}>Copy request instead ↗</button></div>
-    <p className="slot-form__note">Your preferred time is a request, not a confirmed reservation. Raksh&apos;s team confirms availability, shares the pre-call form and payment steps, then sends the Google Meet details. Payment is 100% upfront after confirmation.</p>
+    <p className="slot-form__note">Your preferred time is a request, not a confirmed reservation. Rakshit&apos;s team confirms availability, shares the pre-call form and payment steps, then sends the Google Meet details. Payment is 100% upfront after confirmation.</p>
     <p className="slot-form__status" role="status" aria-live="polite">{message}</p>
   </form>;
 }

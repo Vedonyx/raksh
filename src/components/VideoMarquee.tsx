@@ -48,7 +48,7 @@ function MarqueeCard({ video, index, duplicate }: { video: ShortVideo; index: nu
 }
 
 export default function VideoMarquee() {
-  return <div className="video-marquee" aria-label="Raksh Jain YouTube Shorts">
+  return <div className="video-marquee" aria-label="Rakshit Jain YouTube Shorts">
     <div className="video-marquee__top"><span>THE SHORT-FORM CUT / ON YOUTUBE</span><span>IDEAS IN MOTION <b>●</b></span></div>
     <div className="video-marquee__window">
       <div className="video-marquee__track">
