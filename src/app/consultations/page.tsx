@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { modules } from "../../lib/content";
 
-export const metadata: Metadata = { title: "Consultations", description: "Private 1:1 creator strategy with Rakshit Jain: discover what to make, improve content performance, and build a creator business." };
+export const metadata: Metadata = { title: "Consultations", description: "Private 1:1 creator strategy with Raksh Jain: discover what to make, improve content performance, and build a creator business." };
 
 const chapters = [
   {
@@ -66,7 +66,7 @@ export default function Consultations() {
     {chapters.map((chapter, i) => {
       const offer = modules[i];
       return <section className={`consultation-chapter consultation-chapter--${i+1}`} id={`module-${offer.number}`} key={offer.number}>
-        <div className="consultation-chapter__visual"><Image src={chapter.image} alt={`RakshXD creator strategy module ${offer.number}`} width={1200} height={1500}/><span>MODULE / {offer.number}</span></div>
+        <div className="consultation-chapter__visual"><Image src={chapter.image} alt={`Raksh Jain creator strategy module ${offer.number}`} width={1200} height={1500}/><span>MODULE / {offer.number}</span></div>
         <div className="consultation-chapter__body"><div className="consultation-chapter__intro"><p className="eyebrow">{chapter.eyebrow}</p><p className="consultation-chapter__formal">{offer.name}</p><h2>{chapter.headline}</h2><p>{chapter.intro}</p><div className="consultation-chapter__meta"><span>{offer.days}</span><span>{offer.duration}</span><span>{offer.support}</span></div></div><div className="consultation-chapter__curriculum"><p className="eyebrow">The journey / call by call</p>{chapter.days.map(day=><div className="chapter-row" key={day.n}><span>{day.n}</span><div><h3>{day.name}</h3><p>{day.detail}</p></div></div>)}</div><div className="consultation-chapter__finish"><div><span>BEFORE WE START</span><p>{chapter.prep}</p></div><div><span>WHAT YOU TAKE AWAY</span><p>{chapter.deliverable}</p></div><div className="consultation-chapter__price"><strong>{offer.price}</strong><small>Taxes included</small></div><Link className="pill-button" href={`/contact?module=${offer.number}#slot-request`}>Request Module {offer.number} slot <span>↗</span></Link></div></div>
       </section>;
     })}
