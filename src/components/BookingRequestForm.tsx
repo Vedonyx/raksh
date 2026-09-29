@@ -46,7 +46,7 @@ export default function BookingRequestForm({ initialModule = "" }: Props) {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Could not send your request");
       setSuccess(true);
-      setMessage("Thank you. Your pre-sales request has been received. Raksh's team will contact you with next steps.");
+      setMessage("Thank you. Your pre-sales request has been received. Rakshit's team will contact you with next steps.");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Could not send your request. Please try again.");
     } finally { setBusy(false); }
@@ -64,7 +64,7 @@ export default function BookingRequestForm({ initialModule = "" }: Props) {
       <label>Preferred start time <span>(IST, optional)</span><select name="time" value={time} onChange={(event) => setTime(event.target.value)} disabled={success}><option value="">Choose a time</option>{slots.map((slot) => <option value={slot.value} key={slot.value}>{slot.label}</option>)}</select></label>
     </div>
     <label>What would you like help with? <span>(optional)</span><textarea name="goal" rows={3} maxLength={2000} value={goal} onChange={(event) => setGoal(event.target.value)} placeholder="A little context helps us prepare." disabled={success} /></label>
-    <label className="slot-form__consent"><input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required disabled={success} /><span>I agree to be contacted by Raksh&apos;s team about this enquiry.</span></label>
+    <label className="slot-form__consent"><input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required disabled={success} /><span>I agree to be contacted by Rakshit&apos;s team about this enquiry.</span></label>
     <label className="slot-form__honeypot" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
     <div className="slot-form__footer"><button type="submit" className="pill-button" disabled={busy || success}>{busy ? "Sending..." : success ? "Request received ✓" : "Join pre-sales ↗"}</button></div>
     <p className="slot-form__status" role="status" aria-live="polite">{message}</p>

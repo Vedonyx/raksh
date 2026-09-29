@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { modules } from "../../lib/content";
 
-export const metadata: Metadata = { title: "Consultations", description: "Private 1:1 creator strategy with Raksh Jain: discover what to make, improve content performance, and build a creator business." };
+export const metadata: Metadata = { title: "Consultations", description: "Private 1:1 creator strategy with Rakshit Jain: discover what to make, improve content performance, and build a creator business." };
 
 const chapters = [
   {
@@ -48,7 +48,7 @@ const chapters = [
       { n: "04", name: "Systemize", detail: "SOPs and a clear workflow from ideas through production to analytics." },
       { n: "05", name: "Handle", detail: "Team leadership, feedback, accountability and quality standards." },
       { n: "06", name: "Profit", detail: "Monetization, costs, margins and revenue diversification." },
-      { n: "07", name: "Future-proof", detail: "Raksh's real creator revenue breakdown, the views-to-profit chain, IP, resilience, and a 12–24 month vision." },
+      { n: "07", name: "Future-proof", detail: "Rakshit's real creator revenue breakdown, the views-to-profit chain, IP, resilience, and a 12–24 month vision." },
     ],
   },
 ];
@@ -57,7 +57,7 @@ export default function Consultations() {
   return <>
     <section className="consult-hero">
       <div className="consult-hero__image" data-parallax="0.05" />
-      <div className="wrap consult-hero__content"><p className="eyebrow">Private creator strategy / 1:1 with Raksh</p><h1>Your next move<br/><em>starts with clarity.</em></h1><p>What to make. How to make it perform. How to build the business behind it. Three distinct stages, each with a strategy shaped around you.</p><div className="button-row"><Link className="pill-button" href="#choose">Find your module <span>↓</span></Link><span className="consult-hero__note">Private Google Meet calls · Personalized direction</span></div></div>
+      <div className="wrap consult-hero__content"><p className="eyebrow">Private creator strategy / 1:1 with Rakshit</p><h1>Your next move<br/><em>starts with clarity.</em></h1><p>What to make. How to make it perform. How to build the business behind it. Three distinct stages, each with a strategy shaped around you.</p><div className="button-row"><Link className="pill-button" href="#choose">Find your module <span>↓</span></Link><span className="consult-hero__note">Private Google Meet calls · Personalized direction</span></div></div>
       <div className="consult-hero__bottom wrap"><span>STRATEGY FROM THE WORK / NOT A TEMPLATE</span><span>SCROLL ↓</span></div>
     </section>
 
@@ -66,7 +66,7 @@ export default function Consultations() {
     {chapters.map((chapter, i) => {
       const offer = modules[i];
       return <section className={`consultation-chapter consultation-chapter--${i+1}`} id={`module-${offer.number}`} key={offer.number}>
-        <div className="consultation-chapter__visual"><Image src={chapter.image} alt={`Raksh Jain creator strategy module ${offer.number}`} width={1200} height={1500}/><span>MODULE / {offer.number}</span></div>
+        <div className="consultation-chapter__visual"><Image src={chapter.image} alt={`Rakshit Jain creator strategy module ${offer.number}`} width={1200} height={1500}/><span>MODULE / {offer.number}</span></div>
         <div className="consultation-chapter__body"><div className="consultation-chapter__intro"><p className="eyebrow">{chapter.eyebrow}</p><p className="consultation-chapter__formal">{offer.name}</p><h2>{chapter.headline}</h2><p>{chapter.intro}</p><div className="consultation-chapter__meta"><span>{offer.days}</span><span>{offer.duration}</span><span>{offer.support}</span></div></div><div className="consultation-chapter__curriculum"><p className="eyebrow">The journey / call by call</p>{chapter.days.map(day=><div className="chapter-row" key={day.n}><span>{day.n}</span><div><h3>{day.name}</h3><p>{day.detail}</p></div></div>)}</div><div className="consultation-chapter__finish"><div><span>BEFORE WE START</span><p>{chapter.prep}</p></div><div><span>WHAT YOU TAKE AWAY</span><p>{chapter.deliverable}</p></div><div className="consultation-chapter__price"><strong>{offer.price}</strong><small>Taxes included</small></div><Link className="pill-button" href={`/contact?module=${offer.number}#slot-request`}>Join Module {offer.number} pre-sales <span>↗</span></Link></div></div>
       </section>;
     })}
