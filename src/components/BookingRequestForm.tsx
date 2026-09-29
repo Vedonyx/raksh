@@ -33,7 +33,7 @@ export default function BookingRequestForm({ initialModule = "" }: Props) {
   const [minDate] = useState(() => indiaNow().date);
   const [message, setMessage] = useState("");
 
-  const subject = `RakshXD Module ${module || "consultation"} — slot request`;
+  const subject = `Raksh Jain Module ${module || "consultation"} — slot request`;
   const details = [
     "Hi Raksh,",
     "",

@@ -1,8 +1,8 @@
 export const socialLinks = [
-  { label: "YouTube · RakshXD", href: "https://www.youtube.com/@RakshXD" },
-  { label: "YouTube · Rakshit Jain", href: "https://www.youtube.com/@rakshit.jain1" },
-  { label: "Instagram · RakshXD", href: "https://www.instagram.com/rakshxdd/" },
-  { label: "Instagram · Rakshit Jain", href: "https://www.instagram.com/rakshit.jain1/" },
+  { label: "YouTube · Raksh Jain", href: "https://www.youtube.com/@RakshXD" },
+  { label: "YouTube · Raksh Jain", href: "https://www.youtube.com/@rakshit.jain1" },
+  { label: "Instagram · Raksh Jain", href: "https://www.instagram.com/rakshxdd/" },
+  { label: "Instagram · Raksh Jain", href: "https://www.instagram.com/rakshit.jain1/" },
 ];
 
 export const metrics = [
@@ -65,7 +65,7 @@ export const brandVideos = [
 
 export const milestones = [
   { date: "Around age 8–10", title: "Started building, then studying content", body: "Early projects became a serious interest in creators, audiences and why videos work." },
-  { date: "March 2022", title: "Started RakshXD on YouTube", body: "Minecraft and gaming were the starting point for years of testing ideas and formats." },
+  { date: "March 2022", title: "Started Raksh Jain on YouTube", body: "Minecraft and gaming were the starting point for years of testing ideas and formats." },
   { date: "November 2024", title: "100K subscribers", body: "A first major milestone after a long period of making and learning." },
   { date: "March 2025", title: "Expanded to Instagram", body: "Started building on a second platform and later produced multiple million-view Reels." },
   { date: "October 2025", title: "1M subscribers", body: "Grew from 100K to 1M on YouTube in 11 months." },
@@ -86,5 +86,5 @@ export const faqs = [
   { q: "Does requesting a slot confirm my booking?", a: "No. The preferred time is a request. Availability, the pre-call form and 100% upfront payment steps are confirmed by email before a slot is reserved." },
   { q: "Can a session be rescheduled?", a: "Yes, subject to availability. At least 48 hours' notice has no extra charge; 48–24 hours' notice carries a 20% charge of the module price; less than 24 hours carries a 50% charge. See the booking policy before paying." },
   { q: "What if I miss a session?", a: "Missed sessions and no-shows are non-refundable. The full cancellation and rescheduling terms are on the booking policy page." },
-  { q: "Can I share a call recording?", a: "Calls may be recorded for your personal reference. Any recording provided is confidential and may not be shared or published without Rakshit Jain's prior written permission." },
+  { q: "Can I share a call recording?", a: "Calls may be recorded for your personal reference. Any recording provided is confidential and may not be shared or published without Raksh Jain's prior written permission." },
 ];
