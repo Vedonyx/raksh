@@ -1,7 +1,7 @@
 export type LongVideo = { id: string; title: string; shortTitle: string };
 export type ShortVideo = { id: string; title: string; shortTitle: string };
 
-// Public long-form videos from Raksh Jain's own YouTube channel.
+// Public long-form videos from Rakshit Jain's own YouTube channel.
 export const longVideos: LongVideo[] = [
   { id: "FQaeje7tR4Q", title: "I Bought A Cheap Laptop From Chor Bazaar… BIG SCAM!", shortTitle: "The Chor Bazaar laptop" },
   { id: "wfYEneT8FEM", title: "I Tested Cheapest Gaming Gadgets From Gaffar Market — Scam or Legit?", shortTitle: "Gaffar Market gadgets" },
