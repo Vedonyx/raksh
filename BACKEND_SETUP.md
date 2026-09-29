@@ -12,6 +12,6 @@ Copy `.env.example` to `.env.local` for local development. Set the same values i
 - `ADMIN_PASSWORD_HASH`: scrypt salt and 64-byte hash, joined by `:`. Generate with `node scripts/hash-admin-password.mjs` and enter the password at its prompt.
 - `ADMIN_SESSION_SECRET`: independent random string of at least 32 characters. Generate with `node -e "console.log(require('node:crypto').randomBytes(48).toString('base64url'))"`.
 
-Apply `supabase/migrations/202609290001_presale_leads.sql` to the intended project. Row level security is enabled and anonymous/authenticated roles have no table privileges; only the server's secret key can access the table.
+Apply the files in `supabase/migrations` in order to the intended project. Row level security is enabled and anonymous/authenticated roles have no table privileges; only the server's secret key can access the table. The second migration makes the admin rate-limit function run with the server role's privileges.
 
 Before launch, submit one synthetic lead through the form, confirm it appears in `/admin`, update its status, export the CSV, and remove the synthetic row in Supabase. Rotate any password shared in chat after first use.
