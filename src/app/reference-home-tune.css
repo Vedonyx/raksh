@@ -1,0 +1,46 @@
+/* Restore the original section system, with a Raksh-specific opening scene. */
+.reference-hero--raksh{min-height:930px;padding:170px 0 67px;background:#03070c;display:flex;flex-direction:column;justify-content:flex-end}
+.reference-hero--raksh:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 75% 35%,#1b65b052,transparent 38%);pointer-events:none}
+.reference-hero--raksh:after{z-index:-1;background:linear-gradient(90deg,#03070cf5 0%,#04101cd9 36%,#05101b4d 67%,#03070c38 100%),linear-gradient(0deg,#03070c 1%,transparent 46%)}
+.reference-hero__portrait{position:absolute;inset:0;z-index:-2;overflow:hidden;transform:translateY(var(--parallax-y,0px)) scale(1.075);transform-origin:center}
+.reference-hero__portrait img{width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:saturate(.8) contrast(1.1)}
+.reference-hero--raksh .reference-hero__content{align-items:flex-start;text-align:left;margin-bottom:85px}
+.reference-hero--raksh .reference-hero__badge{border-color:#9ec6f257;background:#081a2dda;box-shadow:0 8px 30px #0009}
+.reference-hero--raksh .reference-hero__script{color:#d5e4f8;margin:25px 0 11px;font-size:clamp(1.4rem,2.5vw,2.4rem)}
+.reference-hero--raksh h1{font-size:clamp(5rem,10.5vw,10.5rem);line-height:.88;letter-spacing:-.09em;margin:0;color:#a5cfff;text-shadow:0 8px 45px #0007}
+.reference-hero--raksh h1 span{color:#fff}
+.reference-hero--raksh .reference-hero__description{max-width:565px;font-size:clamp(1rem,1.3vw,1.16rem);line-height:1.5;margin:27px 0 25px;color:#e5edf6}
+.reference-hero__actions{display:flex;align-items:center;flex-wrap:wrap;gap:32px}
+.reference-hero--raksh .reference-hero__film{align-self:center;width:min(calc(100% - 80px),1240px);position:relative;z-index:2}
+.reference-hero--raksh .reference-hero__frame{height:clamp(146px,13vw,190px);border:1px solid #c8dfff37;box-shadow:0 22px 45px #0007}
+.reference-hero--raksh .reference-hero__frame:nth-child(2){transform:translateY(13px)}
+.reference-hero--raksh .reference-hero__frame:nth-child(4){transform:translateY(13px)}
+.reference-hero__scroll{position:absolute;right:max(40px,calc((100vw - 1240px)/2));bottom:20px;font-size:.67rem;font-weight:800;letter-spacing:.14em;color:#b7d3ef;display:flex;align-items:center;gap:16px}
+.reference-hero__scroll span{font-size:1.3rem;color:var(--accent)}
+.reference-journey,.reference-why,.reference-work,.reference-pricing,.reference-brands,.reference-faq,.reference-final,.reference-avatar{border-top:1px solid #97bce61a}
+.reference-journey{background:linear-gradient(#050a12,#0b1422)}
+.reference-journey__card{background:linear-gradient(145deg,#14243b,#0a1422);border-color:#a6ccf42c}
+.reference-why{background:#07111d}
+.reference-why__grid>div{background:radial-gradient(ellipse at 50% 110%,#5b9be521,transparent 65%),#0e1b2b}
+.reference-work{background:#050c16}
+.reference-pricing{background:#0a1727}
+.reference-price{background:linear-gradient(145deg,#14243a,#0b1727)}
+.reference-brands{background:#060f1b}
+.reference-faq{background:#0b1828}
+.reference-final{background:radial-gradient(ellipse at 50% 100%,#163a66,#040a12 65%)}
+.reference-avatar{background:#050b14}
+.reference-avatar__stage{background:radial-gradient(ellipse at 50% 70%,#124a7899,transparent 44%)}
+.reference-avatar__ring{border-color:#87beff3b;animation:reference-ring 8s ease-in-out infinite alternate}
+.reference-avatar__ring--inner{animation-delay:-3s}
+.avatar-proof{border-color:#add2fb35;background:linear-gradient(120deg,#132338e8,#081320e8)}
+.avatar-proof:hover{border-color:#8fc1ff99}
+.reference-hero--raksh .reference-hero__content>*{animation:hero-enter .85s both;animation-delay:.08s}
+.reference-hero--raksh .reference-hero__content>*:nth-child(2){animation-delay:.16s}
+.reference-hero--raksh .reference-hero__content>*:nth-child(3){animation-delay:.24s}
+.reference-hero--raksh .reference-hero__content>*:nth-child(4){animation-delay:.32s}
+.reference-hero--raksh .reference-hero__content>*:nth-child(5){animation-delay:.4s}
+@keyframes hero-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes reference-ring{from{opacity:.45;scale:.96}to{opacity:.9;scale:1.04}}
+@media(max-width:820px){.reference-hero--raksh{min-height:850px;padding-top:135px}.reference-hero--raksh .reference-hero__content{margin-bottom:75px}.reference-hero--raksh .reference-hero__film{width:calc(100% - 36px)}.reference-hero__scroll{right:22px}.reference-hero__portrait img{object-position:65% center}}
+@media(max-width:600px){.reference-hero--raksh{min-height:820px;padding-top:145px;padding-bottom:50px;justify-content:flex-end}.reference-hero--raksh:after{background:linear-gradient(90deg,#03070cf0 0%,#051321a1 58%,#06132157),linear-gradient(0deg,#03070c 0%,transparent 60%)}.reference-hero__portrait{bottom:140px}.reference-hero__portrait img{object-position:74% center}.reference-hero--raksh .reference-hero__content{margin-bottom:49px}.reference-hero--raksh .reference-hero__script{font-size:1.34rem;line-height:1.1}.reference-hero--raksh h1{font-size:clamp(3.45rem,16vw,6rem)}.reference-hero--raksh .reference-hero__description{margin:19px 0 22px;max-width:350px;font-size:.96rem}.reference-hero__actions{gap:20px}.reference-hero__actions .reference-button{min-width:170px}.reference-hero--raksh .reference-hero__film{width:calc(100% - 20px)}.reference-hero--raksh .reference-hero__frame{height:165px}.reference-hero--raksh .reference-hero__frame:nth-child(2),.reference-hero--raksh .reference-hero__frame:nth-child(4){transform:none}.reference-hero__scroll{display:none}.reference-avatar__stage{height:655px}.reference-avatar__person{bottom:22px}}
+@media(prefers-reduced-motion:reduce){.reference-avatar__ring,.reference-hero--raksh .reference-hero__content>*{animation:none!important}.reference-hero__portrait{transform:none}}
