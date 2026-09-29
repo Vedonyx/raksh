@@ -5,7 +5,7 @@ import VideoMarquee from "../components/VideoMarquee";
 import { brandVideos, faqs, modules } from "../lib/content";
 
 const journey = [
-  { number: "01", phase: "2022 / THE START", title: "Make the first thing.", text: "Gaming and Minecraft became the place to test ideas, learn by doing, and understand what people actually watch.", list: ["Started Raksh Jain on YouTube", "Learned through real uploads", "Built a repeatable creative instinct"], metric: "START", metricLabel: "IT ALL STARTED HERE" },
+  { number: "01", phase: "2022 / THE START", title: "Make the first thing.", text: "Gaming and Minecraft became the place to test ideas, learn by doing, and understand what people actually watch.", list: ["Started publishing on YouTube", "Learned through real uploads", "Built a repeatable creative instinct"], metric: "START", metricLabel: "IT ALL STARTED HERE" },
   { number: "02", phase: "2024–25 / THE MOMENTUM", title: "Find the connection.", text: "One breakthrough led to a sharper process. The channel went from 100K to 1M subscribers in eleven months.", list: ["100K in November 2024", "1M in October 2025", "Multiple million-view ideas"], metric: "1M+", metricLabel: "A SHARPER PROCESS" },
   { number: "03", phase: "NOW / THE OPERATION", title: "Build beyond the channel.", text: "Today the work spans platforms, partnerships, and a 20–25 person operation built to make consistently better content.", list: ["Broader gaming, IRL and tech", "A creative team and systems", "Creator strategy consultations"], metric: "20–25", metricLabel: "A BIGGER CANVAS" },
 ];
