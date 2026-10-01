@@ -13,6 +13,7 @@ export default function SiteMotion() {
     const targets = document.querySelectorAll<HTMLElement>(
       ".section-heading, .module-cinema, .feature-layout, .case-panel, .proof-grid figure, .result-grid article, .timeline-row, .offer-card, .contact-card, .story-collage, .work-photo-story__grid, .about-film, .brand-editorial, .brand-video-grid .video-card, .chapter-row, .consultation-chapter__intro, .consultation-chapter__visual, .consult-overview__item, .consult-process__steps>div, .stage-grid article, .reference-avatar__copy, .reference-avatar__stage, .reference-journey__card, .reference-why__grid>div, .reference-work__feature, .reference-work__stats>div, .reference-price, .reference-brands__names span, .reference-brands__videos .video-card, .reference-faq__list details, .work-hero__film, .work-process__story, .work-process__step, .work-longform__card, .work-proofnote, .work-lastword, .recognition__grid article, .brand-storyboard__grid article, .slot-section__intro, .slot-form, .narrative-columns p, .faq-list details, .social-list a"
     );
+    const newTargets = document.querySelectorAll<HTMLElement>(".proof-showcase__header, .proof-gallery, .revenue-preview, .module-revenue");
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -25,6 +26,10 @@ export default function SiteMotion() {
     targets.forEach((target, index) => {
       target.classList.add("reveal-on-scroll");
       target.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 45}ms`);
+      observer.observe(target);
+    });
+    newTargets.forEach((target) => {
+      target.classList.add("reveal-on-scroll");
       observer.observe(target);
     });
 

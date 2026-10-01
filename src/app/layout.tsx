@@ -9,12 +9,13 @@ import "./reference-blue.css";
 import "./reference-home-tune.css";
 import "./motion-upgrades.css";
 import "./raksh-proof-tune.css";
+import "./client-revisions.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rakshitjain.com"),
-  title: { default: "Rakshit Jain — Rakshit Jain", template: "%s | Rakshit Jain" },
-  description: "Rakshit Jain (Rakshit Jain) helps creators decide what to make, improve content performance and build a business around it.",
-  openGraph: { title: "Rakshit Jain — Rakshit Jain", description: "Creator. Strategist. Operator. Founder.", type: "website" },
+  title: { default: "Rakshit Jain | Creator & Strategy Consultations", template: "%s | Rakshit Jain" },
+  description: "Private creator strategy with Rakshit Jain. Find what to make, improve your short-form content and build the business behind it.",
+  openGraph: { title: "Rakshit Jain | Creator & Strategy Consultations", description: "Private 1:1 strategy for your content and creator business.", type: "website" },
 };
 
 const nav = [

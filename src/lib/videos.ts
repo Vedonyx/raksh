@@ -1,5 +1,5 @@
 export type LongVideo = { id: string; title: string; shortTitle: string };
-export type ShortVideo = { id: string; title: string; shortTitle: string };
+export type ShortVideo = { id: string; title: string; shortTitle: string; views: string };
 
 // Public long-form videos from Rakshit Jain's own YouTube channel.
 export const longVideos: LongVideo[] = [
@@ -11,12 +11,13 @@ export const longVideos: LongVideo[] = [
   { id: "8u7DpHDqhSI", title: "I Tried Gaming In EVERY Bus Seat", shortTitle: "Gaming in every bus seat" },
 ];
 
-// Short-form uploads used in the moving homepage film strip.
+// Selected from the channel's public Popular Shorts list on 2 October 2026.
+// These rounded view counts are snapshots, not live counters.
 export const shortVideos: ShortVideo[] = [
-  { id: "aIoVDZAW85w", title: "Can a game run on the cheapest laptop?", shortTitle: "The 19M+ Short" },
-  { id: "mKNWo__DsnQ", title: "1 Hour Gaming Stress Test on S26 Ultra", shortTitle: "A one-hour stress test" },
-  { id: "IpWPQW9MGPU", title: "Phone vs Console: ₹1,00,000 For Gaming", shortTitle: "Phone vs console" },
-  { id: "mWOKO6rOvJQ", title: "Life of a 16 Year Old Creator", shortTitle: "Life of a creator" },
-  { id: "1HYSz9jck7k", title: "I Tried a Unique Gaming Console", shortTitle: "A new way to play" },
-  { id: "wC-f4IMPt7I", title: "Best Gaming Earbuds Under ₹1,000", shortTitle: "Gaming under ₹1,000" },
+  { id: "aIoVDZAW85w", title: "I Played Minecraft on the World's Cheapest Laptop (₹400)", shortTitle: "Minecraft on a ₹400 laptop", views: "19M" },
+  { id: "JwkTl4vUG8w", title: "Thank You for Letting Me Achieve My Dreams!", shortTitle: "A dream, made real", views: "16M" },
+  { id: "r-wAO7PDjJQ", title: "I Played Minecraft on Amazon's Cheapest Phone", shortTitle: "Amazon's cheapest phone", views: "13M" },
+  { id: "_PaNmz3GGR0", title: "I Made Lava and Water Touch Each Other (Without Mods)", shortTitle: "Lava meets water", views: "11M" },
+  { id: "MA57PwobhGE", title: "I Tried Underrated Gaming Cafes", shortTitle: "Underrated gaming cafes", views: "10M" },
+  { id: "EsAf8BOaQ-k", title: "I Played Minecraft on the World's Cheapest Gaming PC", shortTitle: "The cheapest gaming PC", views: "8.9M" },
 ];
