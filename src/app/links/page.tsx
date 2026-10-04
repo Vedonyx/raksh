@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { socialLinks } from "../../lib/content";
+import { notFound } from "next/navigation";
+import CreatorLinkPage from "../../components/CreatorLinkPage";
+import { getLinkPage } from "../../lib/creator-store";
 
-export const metadata: Metadata = { title: "Links", description: "Rakshit Jain official channels, consultation and collaboration links." };
+export const metadata: Metadata = {
+  title: "Links",
+  description:
+    "Rakshit Jain official channels, consultation and collaboration links.",
+};
 
-export default function Links() {
-  return <section className="page-hero wrap links-page"><p className="eyebrow">Rakshit Jain / Official links</p><h1 className="display-title">One place for<br/><em>everything Rakshit.</em></h1><div className="links-stack"><Link href="/consultations">Creator consultations <span>↗</span></Link><Link href="/for-brands">Brand collaborations <span>↗</span></Link>{socialLinks.map((s)=><a href={s.href} key={s.href} target="_blank" rel="noreferrer">{s.label} <span>↗</span></a>)}</div></section>;
+export const dynamic = "force-dynamic";
+export default async function Links() {
+  const data = await getLinkPage("links");
+  if (!data) notFound();
+  return <CreatorLinkPage {...data} />;
 }

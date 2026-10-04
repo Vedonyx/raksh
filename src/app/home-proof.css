@@ -24,10 +24,7 @@
 .proof-gallery__visual>button{display:block;width:100%;border:1px solid #9acbff44;border-radius:10px;overflow:hidden;background:#0c0c0c;cursor:zoom-in;padding:0;color:#c6e0ff;transition:transform .3s,border-color .3s;box-shadow:0 22px 40px #0006}
 .proof-gallery__visual>button:hover{transform:translateY(-5px);border-color:#b1d6ff}
 .proof-capture{position:relative;width:100%;overflow:hidden;background:#0d0d0d}
-.proof-capture img{display:block;position:absolute;max-width:none;height:auto}
-.proof-capture--short{aspect-ratio:700/225}.proof-capture--short img{width:140%;left:-40%;top:-48%}
-.proof-capture--channel{aspect-ratio:1648/470}.proof-capture--channel img{width:100%;left:0;top:-59.36%}
-.proof-capture--reel{aspect-ratio:1179/1700}.proof-capture--reel img{width:100%;left:0;top:-7.65%}
+.proof-capture img{display:block;position:static;width:100%;height:auto}
 .proof-gallery__slide--instagram .proof-gallery__visual>button{max-width:365px}
 .proof-gallery__zoom{display:flex;align-items:center;justify-content:space-between;padding:14px 17px;border-top:1px solid #a5ccff27;background:#0a1623;font:500 .7rem "SF Pro Display",sans-serif}
 .proof-gallery__visual figcaption{font-size:.51rem;letter-spacing:.13em;color:#829bb7;margin-top:16px}
@@ -43,3 +40,4 @@
 @media(max-width:950px){.proof-showcase__header{display:block}.proof-showcase__header>p{max-width:600px;margin-top:22px}.proof-gallery__slide{padding:32px;gap:30px}.proof-gallery__metrics{grid-template-columns:1fr;gap:15px}.proof-gallery__number{font-size:5rem}}
 @media(max-width:700px){.proof-showcase{padding:70px 0}.proof-showcase__header{margin-bottom:30px}.proof-showcase__header h2{font-size:clamp(2.35rem,7.5vw,3.8rem)}.proof-showcase__header>p{font-size:.9rem}.proof-showcase__category{display:none}.proof-gallery__slide{grid-template-columns:1fr;padding:28px 22px;gap:28px;min-height:0}.proof-gallery__number{font-size:5.5rem}.proof-gallery__copy h3{font-size:1.65rem}.proof-gallery__label{margin-bottom:23px}.proof-gallery__metrics{grid-template-columns:1fr 1fr;margin-top:23px}.proof-gallery__visual>button{width:100%}.proof-gallery__slide--instagram .proof-gallery__visual>button{max-width:330px}.proof-gallery__navigation{padding:17px 18px;gap:8px}.proof-gallery__navigation>span{min-width:auto;font-size:.6rem}.proof-gallery__dots{gap:0}.proof-gallery__dots button{width:20px}.proof-gallery__arrows{gap:6px}.proof-gallery__arrows button{width:36px;height:36px}.proof-showcase__footer{align-items:start;flex-direction:column;gap:12px}.proof-dialog__header{padding:14px 16px}.proof-dialog__header p{font-size:.78rem}.proof-platforms button{padding:10px 18px;font-size:.77rem}}
 @media(prefers-reduced-motion:reduce){.proof-gallery__slide{animation:none}.proof-gallery__visual>button:hover{transform:none}}
+.proof-capture--reel.proof-capture--full{aspect-ratio:auto}.proof-capture--reel.proof-capture--full img{position:static;top:auto}.proof-gallery__slide--instagram .proof-gallery__visual>button{max-width:480px}

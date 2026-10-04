@@ -1,0 +1,1 @@
+create index creator_traffic_limits_expiry_idx on public.creator_traffic_limits(window_started_at);
