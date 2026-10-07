@@ -52,19 +52,19 @@ function Breakdown({
   total: number;
 }) {
   return (
-    <section className="ad-panel ad-breakdown">
-      <div className="ad-panel-title">
+    <section className="workspace-panel workspace-breakdown">
+      <div className="workspace-panel-title">
         <h3>{title}</h3>
         <span>{number(total)} views</span>
       </div>
       {rows.length ? (
         rows.map((row) => (
-          <div className="ad-breakdown-row" key={row.label}>
+          <div className="workspace-breakdown-row" key={row.label}>
             <div>
               <span>{row.label}</span>
               <b>{number(row.count)}</b>
             </div>
-            <div className="ad-progress">
+            <div className="workspace-progress">
               <span
                 style={{ width: `${total ? (row.count / total) * 100 : 0}%` }}
               />
@@ -72,7 +72,7 @@ function Breakdown({
           </div>
         ))
       ) : (
-        <p className="ad-soft-empty">
+        <p className="workspace-soft-empty">
           Visits will appear here once tracking begins.
         </p>
       )}
@@ -91,13 +91,13 @@ function TrafficChart({ analytics }: { analytics: AnalyticsSummary }) {
   const coordinate = (i: number, value: number) =>
     `${48 + (i * 704) / Math.max(1, points.length - 1)},${188 - (value / maximum) * 155}`;
   return (
-    <section className="ad-panel ad-traffic">
-      <div className="ad-panel-title">
+    <section className="workspace-panel workspace-traffic">
+      <div className="workspace-panel-title">
         <div>
           <h3>Traffic over time</h3>
           <p>Website views and outbound link clicks</p>
         </div>
-        <div className="ad-chart-key">
+        <div className="workspace-chart-key">
           <span>
             <i />
             Views
@@ -109,7 +109,7 @@ function TrafficChart({ analytics }: { analytics: AnalyticsSummary }) {
         </div>
       </div>
       <svg
-        className="ad-chart"
+        className="workspace-chart"
         viewBox="0 0 800 230"
         role="img"
         aria-label={`Daily traffic: ${number(analytics.views)} views and ${number(analytics.clicks)} clicks. Use the daily numbers below for details.`}
@@ -183,7 +183,7 @@ function TrafficChart({ analytics }: { analytics: AnalyticsSummary }) {
           ))}
       </svg>
       <button
-        className="ad-text-button"
+        className="workspace-text-button"
         type="button"
         onClick={() => setDetails(!details)}
         aria-expanded={details}
@@ -191,7 +191,7 @@ function TrafficChart({ analytics }: { analytics: AnalyticsSummary }) {
         {details ? "Hide" : "View"} daily numbers {details ? "↑" : "↓"}
       </button>
       {details && (
-        <div className="ad-daily-table">
+        <div className="workspace-daily-table">
           <table>
             <thead>
               <tr>
@@ -362,13 +362,13 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
   };
   if (!authenticated)
     return (
-      <div className="admin-shell ad-login">
-        <div className="ad-login__story">
-          <Link href="/" className="ad-brand">
+      <div className="admin-shell workspace-login">
+        <div className="workspace-login__story">
+          <Link href="/" className="workspace-brand">
             RAKSHIT <span>JAIN</span>
           </Link>
           <div>
-            <span className="ad-eyebrow">
+            <span className="workspace-eyebrow">
               YOUR CREATOR BUSINESS, IN ONE PLACE
             </span>
             <h1>
@@ -381,14 +381,14 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
               <br />A clearer view of what is working.
             </p>
           </div>
-          <span className="ad-login__footer">
+          <span className="workspace-login__footer">
             PRIVATE WORKSPACE · RAKSHIT JAIN
           </span>
         </div>
-        <div className="ad-login__form">
+        <div className="workspace-login__form">
           <form onSubmit={login}>
-            <span className="ad-login__symbol">↗</span>
-            <p className="ad-eyebrow">ADMIN ACCESS</p>
+            <span className="workspace-login__symbol">↗</span>
+            <p className="workspace-eyebrow">ADMIN ACCESS</p>
             <h2>Welcome back.</h2>
             <p>Sign in to manage your website.</p>
             <label>
@@ -411,13 +411,13 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                 required
               />
             </label>
-            <button className="ad-primary" type="submit" disabled={busy}>
+            <button className="workspace-primary" type="submit" disabled={busy}>
               {busy ? "Signing in…" : "Sign in to dashboard"} ↗
             </button>
-            <p className="ad-inline-status" role="status">
+            <p className="workspace-inline-status" role="status">
               {message}
             </p>
-            <Link className="ad-login__back" href="/">
+            <Link className="workspace-login__back" href="/">
               ← Back to website
             </Link>
           </form>
@@ -425,12 +425,12 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
       </div>
     );
   return (
-    <div className="admin-shell ad-dashboard">
-      <aside className="ad-sidebar">
-        <Link href="/admin" className="ad-brand">
+    <div className="admin-shell workspace-dashboard">
+      <aside className="workspace-sidebar">
+        <Link href="/admin" className="workspace-brand">
           RAKSHIT <span>JAIN</span>
         </Link>
-        <div className="ad-workspace-label">
+        <div className="workspace-workspace-label">
           <i /> Creator workspace
         </div>
         <nav aria-label="Dashboard navigation">
@@ -444,7 +444,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                 setMessage("");
               }}
             >
-              <span className="ad-nav-icon" aria-hidden="true">
+              <span className="workspace-nav-icon" aria-hidden="true">
                 {item.icon}
               </span>
               {item.label}
@@ -455,7 +455,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
             </button>
           ))}
         </nav>
-        <div className="ad-sidebar-bottom">
+        <div className="workspace-sidebar-bottom">
           <a href="/" target="_blank" rel="noreferrer">
             View website <span>↗</span>
           </a>
@@ -469,13 +469,13 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
           </button>
         </div>
       </aside>
-      <div className="ad-main">
-        <header className="ad-topbar">
+      <div className="workspace-main">
+        <header className="workspace-topbar">
           <div>
-            <span className="ad-eyebrow">CREATOR WORKSPACE</span>
+            <span className="workspace-eyebrow">CREATOR WORKSPACE</span>
             <h1>{nav.find((x) => x.key === view)?.label}</h1>
           </div>
-          <div className="ad-topbar-actions">
+          <div className="workspace-topbar-actions">
             <select
               aria-label="Analytics period"
               value={days}
@@ -488,7 +488,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
             </select>
             <button
               type="button"
-              className="ad-icon-button"
+              className="workspace-icon-button"
               aria-label="Refresh dashboard"
               disabled={loading || busy}
               onClick={() =>
@@ -499,14 +499,14 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
             >
               ↻
             </button>
-            <span className="ad-account" title="Rakshit Jain">
+            <span className="workspace-account" title="Rakshit Jain">
               RJ
             </span>
           </div>
         </header>
-        <div className="ad-body">
+        <div className="workspace-body">
           {message && (
-            <p className="ad-toast" role="status">
+            <p className="workspace-toast" role="status">
               {message}
               <button
                 type="button"
@@ -518,15 +518,15 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
             </p>
           )}
           {loading && (
-            <p className="ad-loading" role="status">
+            <p className="workspace-loading" role="status">
               Updating your workspace…
             </p>
           )}
           {view === "overview" && (
             <>
-              <div className="ad-welcome">
+              <div className="workspace-welcome">
                 <div>
-                  <p className="ad-eyebrow">THE BIG PICTURE</p>
+                  <p className="workspace-eyebrow">THE BIG PICTURE</p>
                   <h2>Know what&apos;s moving.</h2>
                   <p>
                     A live view of your website, links and creator enquiries.
@@ -536,12 +536,12 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                   href="/links"
                   target="_blank"
                   rel="noreferrer"
-                  className="ad-outline"
+                  className="workspace-outline"
                 >
                   Open your link page ↗
                 </a>
               </div>
-              <div className="ad-kpis">
+              <div className="workspace-kpis">
                 {[
                   {
                     label: "Website views",
@@ -568,7 +568,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                     icon: "☷",
                   },
                 ].map((k) => (
-                  <article className="ad-kpi" key={k.label}>
+                  <article className="workspace-kpi" key={k.label}>
                     <div>
                       <span>{k.label}</span>
                       <i aria-hidden="true">{k.icon}</i>
@@ -583,7 +583,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
               {analytics && (
                 <>
                   <TrafficChart analytics={analytics} />
-                  <div className="ad-insights-grid">
+                  <div className="workspace-insights-grid">
                     <Breakdown
                       title="Top pages"
                       rows={analytics.pages}
@@ -602,20 +602,20 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                   </div>
                 </>
               )}
-              <div className="ad-overview-bottom">
-                <section className="ad-panel">
-                  <div className="ad-panel-title">
+              <div className="workspace-overview-bottom">
+                <section className="workspace-panel">
+                  <div className="workspace-panel-title">
                     <h3>Latest enquiries</h3>
                     <button
                       type="button"
-                      className="ad-text-button"
+                      className="workspace-text-button"
                       onClick={() => setView("enquiries")}
                     >
                       View all →
                     </button>
                   </div>
                   {leads.length ? (
-                    <div className="ad-recent-leads">
+                    <div className="workspace-recent-leads">
                       {leads.slice(0, 5).map((lead) => (
                         <button
                           type="button"
@@ -627,7 +627,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                             setView("enquiries");
                           }}
                         >
-                          <span className="ad-initial">
+                          <span className="workspace-initial">
                             {lead.name.charAt(0).toUpperCase()}
                           </span>
                           <span>
@@ -636,23 +636,23 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                               Module {lead.module} · {date(lead.created_at)}
                             </small>
                           </span>
-                          <span className={`ad-badge ad-badge--${lead.status}`}>
+                          <span className={`workspace-badge workspace-badge--${lead.status}`}>
                             {lead.status}
                           </span>
                         </button>
                       ))}
                     </div>
                   ) : (
-                    <p className="ad-soft-empty">
+                    <p className="workspace-soft-empty">
                       Your next conversation starts here. New form submissions
                       appear automatically.
                     </p>
                   )}
                 </section>
-                <section className="ad-panel ad-workspace-health">
-                  <div className="ad-panel-title">
+                <section className="workspace-panel workspace-workspace-health">
+                  <div className="workspace-panel-title">
                     <h3>Your publishing desk</h3>
-                    <span className="ad-live-dot">Connected</span>
+                    <span className="workspace-live-dot">Connected</span>
                   </div>
                   <button type="button" onClick={() => setView("videos")}>
                     <span>Published videos</span>
@@ -692,7 +692,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
           )}
           {view === "enquiries" && (
             <>
-              <div className="ad-section-heading">
+              <div className="workspace-section-heading">
                 <div>
                   <h2>Turn a request into a conversation.</h2>
                   <p>
@@ -701,7 +701,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                   </p>
                 </div>
                 <Link
-                  className="ad-outline"
+                  className="workspace-outline"
                   prefetch={false}
                   download
                   href="/api/admin/leads?format=csv"
@@ -709,7 +709,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                   Export CSV ↓
                 </Link>
               </div>
-              <div className="ad-enquiry-counts">
+              <div className="workspace-enquiry-counts">
                 {statuses.map((status) => (
                   <button
                     key={status}
@@ -726,7 +726,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                   </button>
                 ))}
               </div>
-              <div className="ad-search">
+              <div className="workspace-search">
                 <input
                   type="search"
                   aria-label="Search enquiries"
@@ -746,9 +746,9 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                 </select>
                 <span>{visible.length} results</span>
               </div>
-              <div className="ad-enquiries-grid">
-                <section className="ad-panel ad-enquiry-list">
-                  <div className="ad-table-scroll">
+              <div className="workspace-enquiries-grid">
+                <section className="workspace-panel workspace-enquiry-list">
+                  <div className="workspace-table-scroll">
                     <table>
                       <thead>
                         <tr>
@@ -778,7 +778,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                             <td>0{Number(lead.module)}</td>
                             <td>
                               <span
-                                className={`ad-badge ad-badge--${lead.status}`}
+                                className={`workspace-badge workspace-badge--${lead.status}`}
                               >
                                 {lead.status}
                               </span>
@@ -790,19 +790,19 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                     </table>
                   </div>
                   {!visible.length && (
-                    <p className="ad-soft-empty">
+                    <p className="workspace-soft-empty">
                       No enquiries match this view.
                     </p>
                   )}
                 </section>
-                <section className="ad-panel ad-enquiry-detail">
+                <section className="workspace-panel workspace-enquiry-detail">
                   {current ? (
                     <>
-                      <span className="ad-eyebrow">
+                      <span className="workspace-eyebrow">
                         MODULE {current.module} / ENQUIRY
                       </span>
                       <h3>{current.name}</h3>
-                      <p className="ad-detail-date">
+                      <p className="workspace-detail-date">
                         {new Date(current.created_at).toLocaleString("en-IN", {
                           dateStyle: "medium",
                           timeStyle: "short",
@@ -810,7 +810,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                         })}{" "}
                         IST
                       </p>
-                      <div className="ad-contact-links">
+                      <div className="workspace-contact-links">
                         <a href={`mailto:${current.email}`}>
                           {current.email} ↗
                         </a>
@@ -825,7 +825,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                         )}
                       </div>
                       {current.preferred_date && (
-                        <div className="ad-detail-note">
+                        <div className="workspace-detail-note">
                           <span>REQUESTED SLOT</span>
                           <p>
                             {current.preferred_date} · {current.preferred_time}{" "}
@@ -834,7 +834,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                         </div>
                       )}
                       {current.goal && (
-                        <div className="ad-detail-note">
+                        <div className="workspace-detail-note">
                           <span>THEIR GOAL</span>
                           <p>{current.goal}</p>
                         </div>
@@ -865,7 +865,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                         />
                       </label>
                       <button
-                        className="ad-primary"
+                        className="workspace-primary"
                         type="button"
                         disabled={busy}
                         onClick={() => save(current)}
@@ -874,7 +874,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
                       </button>
                     </>
                   ) : (
-                    <p className="ad-soft-empty">
+                    <p className="workspace-soft-empty">
                       Choose an enquiry to see its details.
                     </p>
                   )}
@@ -893,7 +893,7 @@ export default function AdminPanel({ signedIn }: { signedIn: boolean }) {
               act={act}
             />
           )}
-          <footer className="ad-footer">
+          <footer className="workspace-footer">
             <span>Rakshit Jain · Private workspace</span>
             <span>Selected period: {days} days · IST</span>
           </footer>

@@ -65,10 +65,10 @@ function EditorDialog({
     else setFailed(true);
   }
   return (
-    <dialog className="ad-dialog" ref={dialog} onCancel={close}>
-      <div className="ad-dialog__top">
+    <dialog className="workspace-dialog" ref={dialog} onCancel={close}>
+      <div className="workspace-dialog__top">
         <div>
-          <span className="ad-eyebrow">
+          <span className="workspace-eyebrow">
             {item ? "EDIT" : "CREATE"} /{" "}
             {video ? "VIDEO" : page ? "LINK PAGE" : "LINK"}
           </span>
@@ -82,7 +82,7 @@ function EditorDialog({
         </div>
         <button
           type="button"
-          className="ad-icon-button"
+          className="workspace-icon-button"
           onClick={close}
           aria-label="Close editor"
         >
@@ -166,7 +166,7 @@ function EditorDialog({
         {page && (
           <label>
             Page shortcut
-            <div className="ad-prefix-input">
+            <div className="workspace-prefix-input">
               <span>/</span>
               <input
                 name="slug"
@@ -197,7 +197,7 @@ function EditorDialog({
             }
           />
         </label>
-        <label className="ad-switch">
+        <label className="workspace-switch">
           <input
             type="checkbox"
             name="published"
@@ -212,15 +212,15 @@ function EditorDialog({
           </span>
         </label>
         {failed && (
-          <p className="ad-inline-status" role="alert">
+          <p className="workspace-inline-status" role="alert">
             {message}
           </p>
         )}
-        <div className="ad-dialog__actions">
+        <div className="workspace-dialog__actions">
           <button type="button" onClick={close} disabled={busy}>
             Cancel
           </button>
-          <button className="ad-primary" disabled={busy} type="submit">
+          <button className="workspace-primary" disabled={busy} type="submit">
             {busy ? "Saving…" : "Save changes"} ↗
           </button>
         </div>
@@ -280,7 +280,7 @@ export default function AdminContentManager({
   }
   return (
     <>
-      <div className="ad-section-heading">
+      <div className="workspace-section-heading">
         <div>
           <h2>{isVideo ? "Videos & referral links" : "Your link pages"}</h2>
           <p>
@@ -290,7 +290,7 @@ export default function AdminContentManager({
           </p>
         </div>
         <button
-          className="ad-primary"
+          className="workspace-primary"
           type="button"
           disabled={busy}
           onClick={() => setEditor({ kind })}
@@ -298,8 +298,8 @@ export default function AdminContentManager({
           + {isVideo ? "Add video" : "Create page"}
         </button>
       </div>
-      <div className="ad-content-toolbar">
-        <div className="ad-tabs">
+      <div className="workspace-content-toolbar">
+        <div className="workspace-tabs">
           <button
             type="button"
             aria-pressed={!archived}
@@ -337,21 +337,21 @@ export default function AdminContentManager({
         </a>
       </div>
       {notice && (
-        <p role="status" className="ad-inline-status">
+        <p role="status" className="workspace-inline-status">
           {notice}
         </p>
       )}
-      <div className="ad-content-grid">
+      <div className="workspace-content-grid">
         <section
-          className="ad-panel ad-content-list"
+          className="workspace-panel workspace-content-list"
           aria-label={isVideo ? "Videos" : "Link pages"}
         >
-          <div className="ad-panel-title">
+          <div className="workspace-panel-title">
             <h3>{isVideo ? "Your uploads" : "Pages"}</h3>
             <span>{items.length} total</span>
           </div>
           {!items.length && (
-            <div className="ad-empty">
+            <div className="workspace-empty">
               <span>{isVideo ? "▶" : "↗"}</span>
               <h3>
                 {archived
@@ -369,11 +369,11 @@ export default function AdminContentManager({
           )}
           {items.map((item, i) => (
             <article
-              className={`ad-content-row${current?.id === item.id ? " is-selected" : ""}`}
+              className={`workspace-content-row${current?.id === item.id ? " is-selected" : ""}`}
               key={item.id}
             >
               <button
-                className="ad-select-row"
+                className="workspace-select-row"
                 type="button"
                 onClick={() => setSelected(item.id)}
               >
@@ -385,7 +385,7 @@ export default function AdminContentManager({
                     height={56}
                   />
                 ) : (
-                  <span className="ad-page-icon">
+                  <span className="workspace-page-icon">
                     /{(item as CreatorPage).slug.slice(0, 3)}
                   </span>
                 )}
@@ -399,7 +399,7 @@ export default function AdminContentManager({
                       : `/${(item as CreatorPage).slug}`}
                   </small>
                   <span
-                    className={`ad-tag ${item.published ? "ad-tag--live" : ""}`}
+                    className={`workspace-tag ${item.published ? "workspace-tag--live" : ""}`}
                   >
                     {item.archived
                       ? "Archived"
@@ -409,7 +409,7 @@ export default function AdminContentManager({
                   </span>
                 </span>
               </button>
-              <div className="ad-row-tools">
+              <div className="workspace-row-tools">
                 {isVideo && !archived && (
                   <>
                     <button
@@ -444,34 +444,34 @@ export default function AdminContentManager({
           ))}
         </section>
         <section
-          className="ad-panel ad-selected-content"
+          className="workspace-panel workspace-selected-content"
           aria-label="Selected content links"
         >
           {current ? (
             <>
-              <div className="ad-panel-title">
+              <div className="workspace-panel-title">
                 <div>
-                  <span className="ad-eyebrow">
+                  <span className="workspace-eyebrow">
                     {isVideo ? "SELECTED VIDEO" : "SELECTED PAGE"}
                   </span>
                   <h3>{(current as CreatorVideo | CreatorPage).title}</h3>
                 </div>
                 <span
-                  className={`ad-tag ${current.published ? "ad-tag--live" : ""}`}
+                  className={`workspace-tag ${current.published ? "workspace-tag--live" : ""}`}
                 >
                   {current.published && !current.archived
                     ? "Published"
                     : "Hidden"}
                 </span>
               </div>
-              <p className="ad-selected-description">
+              <p className="workspace-selected-description">
                 {current.description ||
                   (isVideo
                     ? "Add links to products, tools and resources from this video."
                     : "Add your most useful links. Reorder them to put the most important first.")}
               </p>
               {!isVideo && (
-                <div className="ad-share-url">
+                <div className="workspace-share-url">
                   <code>/{(current as CreatorPage).slug}</code>
                   <button
                     type="button"
@@ -488,7 +488,7 @@ export default function AdminContentManager({
                   </a>
                 </div>
               )}
-              <div className="ad-parent-stats">
+              <div className="workspace-parent-stats">
                 <span>
                   <b>{links.length}</b>{" "}
                   {isVideo ? "referral links" : "active links"}
@@ -505,10 +505,10 @@ export default function AdminContentManager({
                   {isVideo ? "YouTube opens" : "link clicks"} in selected period
                 </span>
               </div>
-              <div className="ad-link-heading">
+              <div className="workspace-link-heading">
                 <h4>{isVideo ? "Referral links" : "Page links"}</h4>
                 <button
-                  className="ad-primary ad-small"
+                  className="workspace-primary workspace-small"
                   type="button"
                   disabled={busy || current.archived}
                   onClick={() =>
@@ -519,17 +519,17 @@ export default function AdminContentManager({
                 </button>
               </div>
               {!links.length && (
-                <p className="ad-soft-empty">
+                <p className="workspace-soft-empty">
                   No links yet. Add one to give visitors their next step.
                 </p>
               )}
-              <div className="ad-managed-links">
+              <div className="workspace-managed-links">
                 {links.map((link, i) => (
                   <article key={link.id}>
-                    <div className="ad-link-number">
+                    <div className="workspace-link-number">
                       {String(i + 1).padStart(2, "0")}
                     </div>
-                    <div className="ad-managed-link-copy">
+                    <div className="workspace-managed-link-copy">
                       <strong>{link.label}</strong>
                       <a href={link.url} target="_blank" rel="noreferrer">
                         {link.url}
@@ -539,7 +539,7 @@ export default function AdminContentManager({
                         {link.published ? "Published" : "Draft"}
                       </small>
                     </div>
-                    <div className="ad-row-tools">
+                    <div className="workspace-row-tools">
                       <button
                         type="button"
                         aria-label={`Move ${link.label} up`}
@@ -591,7 +591,7 @@ export default function AdminContentManager({
                 ))}
               </div>
               {childLinks.some((x) => x.archived) && (
-                <details className="ad-archived-links">
+                <details className="workspace-archived-links">
                   <summary>
                     Archived links (
                     {childLinks.filter((x) => x.archived).length})
@@ -618,7 +618,7 @@ export default function AdminContentManager({
                     ))}
                 </details>
               )}
-              <div className="ad-selected-footer">
+              <div className="workspace-selected-footer">
                 <button
                   disabled={busy}
                   type="button"
@@ -643,7 +643,7 @@ export default function AdminContentManager({
                 ) : (
                   (isVideo || (current as CreatorPage).slug !== "links") && (
                     <button
-                      className="ad-quiet"
+                      className="workspace-quiet"
                       disabled={busy}
                       type="button"
                       onClick={() => act("DELETE", { kind, id: current.id })}
@@ -655,7 +655,7 @@ export default function AdminContentManager({
               </div>
             </>
           ) : (
-            <div className="ad-empty">
+            <div className="workspace-empty">
               <h3>{isVideo ? "Choose a video." : "Choose a page."}</h3>
               <p>Its links and sharing controls will appear here.</p>
             </div>
